@@ -57,7 +57,7 @@ namespace JWTAuthDemo.Controllers
             if (string.IsNullOrEmpty(token))
                 return BadRequest(new { message = "Token is required" });
 
-            var response = _userService.RevokeToken(token, ipAddress());
+            var response = _userService.RevokeToken(token, IpAddress());
 
             if (!response)
                 return NotFound(new { message = "Token not found" });
